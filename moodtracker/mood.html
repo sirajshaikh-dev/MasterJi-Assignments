@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Mood Tracker</title>
+  <link rel="stylesheet" href="mood.css">
+  <!-- FullCalendar CSS -->
+  <link href="https://cdn.jsdelivr.net/npm/fullcalendar@5.11.3/main.min.css" rel="stylesheet">
+</head>
+<body>
+  <div class="container">
+    <h1>Daily Mood Tracker</h1>
+    <form id="mood-form">
+      <label>How are you feeling today?</label>
+      <div class="emoji-buttons">
+        <button type="button" data-mood="happy">😊</button>
+        <button type="button" data-mood="sad">😢</button>
+        <button type="button" data-mood="neutral">😐</button>
+        <button type="button" data-mood="excited">😃</button>
+      </div>
+      <button type="submit">Submit</button>
+    </form>
+    <div id="calendar"></div>
+  </div>
+
+  <!-- FullCalendar JS -->
+  <script src="https://cdn.jsdelivr.net/npm/fullcalendar@5.11.3/main.min.js"></script>
+  <script src="mood.js"></script>
+</body>
+</html>
