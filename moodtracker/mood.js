@@ -22,6 +22,7 @@ const calendar = new FullCalendar.Calendar(calendarEl, {
       sad: '😢',
       neutral: '😐',
       excited: '😃',
+      angry: '😡',
     };
     const deleteButton = document.createElement('button');
     deleteButton.className = 'delete-button';
@@ -41,8 +42,8 @@ calendar.render();
 emojiButtons.forEach(button => {
   button.addEventListener('click', () => {
     selectedMood = button.getAttribute('data-mood');
-    emojiButtons.forEach(btn => btn.style.borderColor = '#ddd'); // Reset all buttons
-    button.style.borderColor = '#007bff'; // Highlight selected button
+    emojiButtons.forEach(btn => btn.classList.remove('selected')); // Remove selected class from all buttons
+    button.classList.add('selected'); // Add selected class to clicked button
   });
 });
 
@@ -84,7 +85,7 @@ moodForm.addEventListener('submit', (e) => {
 
   // Reset form
   selectedMood = null;
-  emojiButtons.forEach(btn => btn.style.borderColor = '#ddd');
+  emojiButtons.forEach(btn => btn.classList.remove('selected'));
 });
 
 // Delete mood
